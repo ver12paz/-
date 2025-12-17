@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku Game</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+
+  .play-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+  }
+
+  .play-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .play-button:hover {
+    background-color: #0056b3;
+  }
+
+  .sudoku-screen {
+    display: none;
+    padding: 20px;
+  }
+
+  .sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .sudoku-cell {
+    border: 1px solid #bbb;
+    text-align: center;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+  }
+</style>
+</head>
+<body>
+
+<div class="play-container" id="play-screen">
+  <button class="play-button" id="play-button">Play</button>
+</div>
+
+<div class="sudoku-screen" id="sudoku-screen">
+  <h1>Sudoku</h1>
+  <div class="sudoku-grid">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+    <input type="number" class="sudoku-cell" min="1" max="9">
+
+    <!-- Repeat for all cells in the 9x9 grid -->
+    <!-- For simplicity, only a few cells are shown here-->
+  </div>
+</div>
+
+<script>
+  const playBtn = document.getElementById('play-button');
+  const playScreen = document.getElementById('play-screen');
+  const sudokuScreen = document.getElementById('sudoku-screen');
+
+  playBtn.addEventListener('click', () => {
+    playScreen.style.display = 'none';
+    sudokuScreen.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
